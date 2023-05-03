@@ -1,3 +1,8 @@
+<%
+  if(session.getAttribute("userNewSession")!=null){
+  response.sendRedirect("home.jsp");
+    }  
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,7 +14,7 @@
     </head>
     <body>
         <form action="LoginController" method="post">
-        <h1>***Login***</h1>
+        <h1>:::Login:::</h1>
         <input type="text" name="user" id="user" class="fields" placeholder="Nome de usuário" required>
         <br><br>
         <input type="text" name="pass" id="pass" class="fields" placeholder="Senha" required>

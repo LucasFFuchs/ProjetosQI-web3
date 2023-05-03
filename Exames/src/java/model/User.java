@@ -38,7 +38,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "Nome:" + userName + "<br> CPF:" + usercpf;
+        return "<br>Nome:" + userName + "<br> CPF:" + usercpf + "<br> Senha:" + userPass;
     }   
     
     //Métodos gerais
