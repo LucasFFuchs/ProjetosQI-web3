@@ -12,10 +12,9 @@ import model.User;
 
 @WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
 public class LoginController extends HttpServlet {
-//Atributos
+    //Atributos
     private String user;
     private String pass;
-    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -24,19 +23,16 @@ public class LoginController extends HttpServlet {
         this.user = request.getParameter("user");
         this.pass = request.getParameter("pass");
         
-        User userNew = new User(this.user,this.pass);
+        User userNew = new User(this.user, this.pass);
         
-        if (userNew.isLogged()) {
+        if(userNew.isLogged()) {
             HttpSession session = request.getSession();
             session.setAttribute("userNewSession", userNew);
-            request.setAttribute("userNew",userNew);
-            request.getRequestDispatcher("home.jsp").forward(request,response);
-        }else {
-            
-        }
-        
+            request.setAttribute("userNew",  userNew);
+            request.getRequestDispatcher("home.jsp")
+                    .forward(request, response);
+        } else {  
         try (PrintWriter out = response.getWriter()) {
-          
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -49,9 +45,9 @@ public class LoginController extends HttpServlet {
             out.println("</script>");
             out.println("</body>");
             out.println("</html>");
+            }
         }
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

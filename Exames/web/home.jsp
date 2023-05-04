@@ -1,9 +1,13 @@
-<%@include file="session/verify.jsp"%>
+<%-- 
+    Document   : home
+    Created on : 27 de abr. de 2023, 19:30:33
+    Author     : QI
+--%>
+<%@include file="session/verify.jsp" %>
 <%@page import="model.User"%>
-<%  
-    User userSession = (User)session.getAttribute("userNewSession");
-%>  
-
+<%
+    User userSession =  (User) session.getAttribute("userNewSession");
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +17,9 @@
     </head>
     <body>
         <button onclick="window.location.href='session/logout.jsp'">Logout</button>
-        
-        <h1>Bem vindo <%=userSession%></h1>
+        <h1>Bem vindo <%= userSession.getUserName()  %></h1>
+        <hr>
+        <button onclick="window.location.href='cadastro.jsp'">Cadastrar</button>
+        <button onclick="window.location.href='lista.jsp'">Listar</button>
     </body>
 </html>

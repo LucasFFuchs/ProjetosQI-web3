@@ -1,50 +1,54 @@
 package model;
 
 public class User {
-    
     //Atributos
     private String userName;
     private String userPass;
-    private String usercpf;
-  
+    private String userCpf;
+    
     //Método construtor
-    public User(String user, String pass){
+    public User(String user, String pass) {
         this.userName = user;
         this.userPass = pass;
     }
     
-    //Getters e Setters
-
+    //Getters & Setters
     public String getUserName() {
         return userName;
     }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
     public String getUserPass() {
         return userPass;
     }
+
     public void setUserPass(String userPass) {
         this.userPass = userPass;
     }
-    public String getUsercpf() {
-        return usercpf;
+
+    public String getUserCpf() {
+        return userCpf;
     }
-    public void setUsercpf(String usercpf) {
-        this.usercpf = usercpf;
+
+    public void setUserCpf(String userCpf) {
+        this.userCpf = userCpf;
     }
     
     //toString - método para representação geral do objeto
-
     @Override
     public String toString() {
-        return "<br>Nome:" + userName + "<br> CPF:" + usercpf + "<br> Senha:" + userPass;
-    }   
+        return "<hr>Nome: " + userName +
+                "<br>CPF: " + userCpf +
+                "<br>Senha: " + userPass;
+    }
     
     //Métodos gerais
-    public boolean isLogged(){
-        return(this.userName.equals("Lucas")
-                && this.userPass.equals("senha1234"));
-    }    
+    public boolean isLogged() {
+        return (this.userName.equals("Lucas")
+                   && this.userPass.equals("1234"));
+    }
     
-}//Fim da classe
+} //Fim da classe
